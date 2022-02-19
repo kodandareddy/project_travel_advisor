@@ -10,4 +10,8 @@ export default makeStyles(() => ({
   spacing: {
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
   },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  }
 }));

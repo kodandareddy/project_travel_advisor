@@ -1,14 +1,15 @@
 /* eslint-disable consistent-return */
 import axios from 'axios';
 
-export const getPlacesData = async (type, sw, ne) => {
+export const getPlacesData = async (sw,ne) => {
+  console.log(process.env.REACT_APP_RAPID_API_WEATHER_API_KEY,sw,ne,"]]]]]]]")
   try {
-    const { data: { data } } = await axios.get(`https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`, {
+    const { data: { data } } = await axios.get(`https://travel-advisor.p.rapidapi.com/restaurants/list-in-boundary`, {
       params: {
         bl_latitude: sw.lat,
+        tr_latitude: ne.lat,
         bl_longitude: sw.lng,
         tr_longitude: ne.lng,
-        tr_latitude: ne.lat,
       },
       headers: {
         'x-rapidapi-key': process.env.REACT_APP_RAPID_API_TRAVEL_API_KEY,
